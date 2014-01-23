@@ -74,26 +74,97 @@ int Q;
     if ([strExample isEqualToString:strInput]) {
         // 例題と入力した文章が一致！
         self.textfield_input.text = nil;
-        NSInteger Q = arc4random() % 3;
+        NSInteger Q = arc4random() % 26;
         score++;
-        if (score != 2){
-        if(Q == 0){
-            self.lbl_example.text = @"america";
+        if (score != 5){
+            if(Q == 0){
+                self.lbl_example.text = @"America";
+            }
+            if(Q == 1){
+                self.lbl_example.text = @"Brazil";
+            }
+            if(Q == 2){
+                self.lbl_example.text = @"Canada";
+            }
+            if(Q == 3){
+                self.lbl_example.text = @"Djibouti";
+            }
+            if(Q == 4){
+                self.lbl_example.text = @"Equatorial Guinea";
+            }
+            if(Q == 5){
+                self.lbl_example.text = @"Fiji";
+            }
+            if(Q == 6){
+                self.lbl_example.text = @"Germany";
+            }
+            if(Q == 7){
+                self.lbl_example.text = @"Honduras";
+            }
+            if(Q == 8){
+                self.lbl_example.text = @"Iraq";
+            }
+            if(Q == 9){
+                self.lbl_example.text = @"Jordan";
+            }
+            if(Q == 10){
+                self.lbl_example.text = @"Kazakhstan";
+            }
+            if(Q == 11){
+                self.lbl_example.text = @"Liechtenstein";
+            }
+            if(Q == 12){
+                self.lbl_example.text = @"Mexico";
+            }
+            if(Q == 13){
+                self.lbl_example.text = @"New Zealand";
+            }
+            if(Q == 14){
+                self.lbl_example.text = @"Oman";
+            }
+            if(Q == 15){
+                self.lbl_example.text = @"Philippines";
+            }
+            if(Q == 16){
+                self.lbl_example.text = @"Qatar";
+            }
+            if(Q == 17){
+                self.lbl_example.text = @"Russian Federation";
+            }
+            if(Q == 18){
+                self.lbl_example.text = @"St. Vincent & the Grenadines";
+            }
+            if(Q == 19){
+                self.lbl_example.text = @"Turkey";
+            }
+            if(Q == 20){
+                self.lbl_example.text = @"Uzbekistan";
+            }
+            if(Q == 21){
+                self.lbl_example.text = @"Viet Nam";
+            }
+            if(Q == 22){
+                self.lbl_example.text = @"Western Sahara";
+            }
+            if(Q == 23){
+                self.lbl_example.text = @"X Japan";
+            }
+            if(Q == 24){
+                self.lbl_example.text = @"Yemen";
+            }
+            if(Q == 25){
+                self.lbl_example.text = @"Zimbabwe";
+            }
         }
-        if(Q == 1){
-            self.lbl_example.text = @"bbb";
+        else {
+            self.lbl_example.text = @"clear!!!";
         }
-        if(Q == 2){
-            self.lbl_example.text = @"ccc";
-        }
-        }
-        else{
-            self.lbl_example.text = @"";
-        }
+        if (score == 6){self.lbl_example.text = @"もうやめて";}
+        
         self.lbl_result.hidden = NO;
         self.lbl_result.text = @"正解！";
         
-        if(score == 2){
+        if(score == 5){
             timeflg = FALSE;
         }
     } else {
@@ -111,224 +182,89 @@ int Q;
         start_date = [NSDate date];
         
     }
-    NSInteger Q = arc4random() % 50;
+    NSInteger Q = arc4random() % 3;
     if(Q == 0){
-        self.lbl_example.text = @"america";
+        self.lbl_example.text = @"America";
     }
     if(Q == 1){
-        self.lbl_example.text = @"brazil";
+        self.lbl_example.text = @"Brazil";
     }
     if(Q == 2){
-        self.lbl_example.text = @"canada";
+        self.lbl_example.text = @"Canada";
     }
-    if(Q == 2){
-        self.lbl_example.text = @"";
+    if(Q == 3){
+        self.lbl_example.text = @"Djibouti";
     }
-}
-
-
-
-UIImage *gu_img;
-UIImage *tyoki_img;
-UIImage *pa_img;
-
-/*- (void)dealloc
- {
- [super dealloc];
- [gu_img release];
- [tyoki_img release];
- [pa_img release];
- }*/
-
-//スタート画面
-- (void)viewDidLoad2
-{
-    [super viewDidLoad];
-    //result.text = @"text";
-    result.hidden = YES;
-    //enemy.hidden = YES;
-    again.hidden = YES;
-    
-    gu_img = [UIImage imageNamed:@"gu.png"];
-    tyoki_img = [UIImage imageNamed:@"tyo.png"];
-    pa_img = [UIImage imageNamed:@"pa.png"];
-    
-	// Do any additional setup after loading the view, typically from a nib.
-}
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
-int record;
-int a;
-//プレイアーがグーを押した時
-- (IBAction)gu_down:(id)sender {
-    a = 2;
-    //janken.text = [NSString stringWithFormat:@"%d", a];
-    gu.hidden = NO;
-    tyoki.hidden = YES;
-    pa.hidden = YES;
-    //enemy.hidden = NO;
-    result.hidden = NO;
-    
-    //対戦結果
-    NSInteger Result = arc4random() % 3;
-    if (Result == 0){
-        //enemy.text = @"✊";
-        [enemy_img setImage:gu_img];
-        result.text = @"あいこで...";
-        tyoki.hidden = NO;
-        pa.hidden = NO;
-        again.hidden = YES;
-        [result setTextColor:[UIColor blackColor]];
+    if(Q == 4){
+        self.lbl_example.text = @"Equatorial Guinea";
     }
-    else if (Result == 1){
-        //enemy.text = @"✌";
-        [enemy_img setImage:tyoki_img];
-        result.text = @"You win!";
-        again.hidden = NO;
-        gu.enabled = NO;
-        [result setTextColor:[UIColor redColor]];
-        record++;
-        if (record == 3){
-            result.text = @"Great!";
-            [result setTextColor:[UIColor greenColor]];
-        }
-        
-        if (record == 5){
-            result.text = @"Congratulations!";
-            [result setTextColor:[UIColor greenColor]];
-        }
-        
+    if(Q == 5){
+        self.lbl_example.text = @"Fiji";
     }
-    else if (Result == 2){
-        //enemy.text = @"✋";
-        [enemy_img setImage:pa_img];
-        result.text = @"You lose!";
-        again.hidden = NO;
-        gu.enabled = NO;
-        [result setTextColor:[UIColor blueColor]];
-        record = 0;
+    if(Q == 6){
+        self.lbl_example.text = @"Germany";
+    }
+    if(Q == 7){
+        self.lbl_example.text = @"Honduras";
+    }
+    if(Q == 8){
+        self.lbl_example.text = @"Iraq";
+    }
+    if(Q == 9){
+        self.lbl_example.text = @"Jordan";
+    }
+    if(Q == 10){
+        self.lbl_example.text = @"Kazakhstan";
+    }
+    if(Q == 11){
+        self.lbl_example.text = @"Liechtenstein";
+    }
+    if(Q == 12){
+        self.lbl_example.text = @"Mexico";
+    }
+    if(Q == 13){
+        self.lbl_example.text = @"New Zealand";
+    }
+    if(Q == 14){
+        self.lbl_example.text = @"Oman";
+    }
+    if(Q == 15){
+        self.lbl_example.text = @"Philippines";
+    }
+    if(Q == 16){
+        self.lbl_example.text = @"Qatar";
+    }
+    if(Q == 17){
+        self.lbl_example.text = @"Russian Federation";
+    }
+    if(Q == 18){
+        self.lbl_example.text = @"St. Vincent & the Grenadines";
+    }
+    if(Q == 19){
+        self.lbl_example.text = @"Turkey";
+    }
+    if(Q == 20){
+        self.lbl_example.text = @"Uzbekistan";
+    }
+    if(Q == 21){
+        self.lbl_example.text = @"Viet Nam";
+    }
+    if(Q == 22){
+        self.lbl_example.text = @"Western Sahara";
+    }
+    if(Q == 23){
+        self.lbl_example.text = @"X Japan";
+    }
+    if(Q == 24){
+        self.lbl_example.text = @"Yemen";
+    }
+    if(Q == 25){
+        self.lbl_example.text = @"Zimbabwe";
     }
 }
 
-//プレイヤ＝がチョキ
-- (IBAction)tyoki_down:(id)sender {
-    janken.text = @"じゃんけん...ぽん！";
-    gu.hidden = YES;
-    tyoki.hidden = NO;
-    pa.hidden = YES;
-    //enemy.hidden = NO;
-    result.hidden = NO;
-    
-    NSInteger Result = arc4random() % 3;
-    
-    //対戦結果
-    if (Result == 0){
-        //enemy.text = @"✊";
-        [enemy_img setImage:gu_img];
-        result.text = @"You lose!";
-        again.hidden = NO;
-        tyoki.enabled = NO;
-        [result setTextColor:[UIColor blueColor]];
-        record = 0;
-    }
-    else if (Result == 1){
-        //enemy.text = @"✌";
-        [enemy_img setImage:tyoki_img];
-        result.text = @"あいこで...";
-        gu.hidden = NO;
-        pa.hidden = NO;
-        again.hidden = YES;
-        [result setTextColor:[UIColor blackColor]];
-    }
-    else if (Result == 2){
-        //enemy.text = @"✋";
-        [enemy_img setImage:pa_img];
-        result.text = @"You win!";
-        again.hidden = NO;
-        tyoki.enabled = NO;
-        [result setTextColor:[UIColor redColor]];
-        record++;
-        if (record == 3){
-            result.text = @"Great!";
-            [result setTextColor:[UIColor greenColor]];
-        }
-        if (record == 5){
-            result.text = @"Congratulations!";
-            [result setTextColor:[UIColor greenColor]];
-        }
-    }
-    
-}
 
-//プレイヤーがパー
-- (IBAction)pa_down:(id)sender {
-    janken.text = @"じゃんけん...ぽん！";
-    gu.hidden = YES;
-    tyoki.hidden = YES;
-    pa.hidden = NO;
-    //enemy.hidden = NO;
-    result.hidden = NO;
-    
-    //対戦結果
-    NSInteger Result = arc4random() % 3;
-    if (Result == 0){
-        //enemy.text = @"✊";
-        [enemy_img setImage:gu_img];
-        result.text = @"You win!";
-        again.hidden = NO;
-        pa.enabled = NO;
-        [result setTextColor:[UIColor redColor]];
-        record++;
-        if (record == 3){
-            result.text = @"Great!";
-            [result setTextColor:[UIColor greenColor]];
-        }
-        if (record == 5){
-            result.text = @"Congratulations!";
-            [result setTextColor:[UIColor greenColor]];
-        }
-    }
-    else if (Result == 1){
-        //enemy.text = @"✌";
-        [enemy_img setImage:tyoki_img];
-        result.text = @"You lose!";
-        again.hidden = NO;
-        pa.enabled = NO;
-        [result setTextColor:[UIColor blueColor]];
-        record = 0;
-    }
-    else if (Result == 2){
-        //enemy.text = @"✋";
-        [enemy_img setImage:pa_img];
-        result.text = @"あいこで...";
-        gu.hidden = NO;
-        tyoki.hidden = NO;
-        again.hidden = YES;
-        [result setTextColor:[UIColor blackColor]];
-    }
-    
-}
 
-- (IBAction)again_down:(id)sender {
-    gu.hidden = NO;
-    tyoki.hidden = NO;
-    pa.hidden = NO;
-    gu.enabled = YES;
-    tyoki.enabled = YES;
-    pa.enabled = YES;
-    
-    janken.text = @"じゃんけん...";
-    //enemy.text = @"";
-    [enemy_img setImage:nil];
-    result.text = @"";
-    again.hidden = YES;
-    
-}
 @end
 
 
